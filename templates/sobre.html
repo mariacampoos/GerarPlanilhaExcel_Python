@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sobre o Projeto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sobre.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Sobre o Projeto</h1>
+
+        <p>Este projeto tem como objetivo facilitar a geração de relatórios de pedidos com base em filtros de datas e status.
+            Ele foi desenvolvido para fins de aprendizado e integração de diferentes tecnologias.</p>
+
+        <p>Funcionalidades:</p>
+        <ul>
+            <li>Filtro por data de início e fim</li>
+            <li>Filtro por status do pedido</li>
+            <li>Exportação dos dados para Excel</li>
+        </ul>
+
+        <h3>Tecnologias Utilizadas</h3>
+        <ul class="tech-list">
+            <li>Python</li>
+            <li>Flask</strong> (framework web)</li>
+            <li>PostgreSQL</strong> (banco de dados relacional)</li>
+            <li>SQLAlchemy</strong> (ORM)</li>
+            <li>Pandas</strong> (manipulação de dados)</li>
+            <li>openpyxl</strong> (exportação para Excel)</li>
+            <li>HTML5 + CSS3</strong></li>
+            <li>Jinja2</strong> (template engine do Flask)</li>
+            <li>dotenv</strong> (variáveis de ambiente)</li>
+        </ul>
+
+        <p>Este sistema se conecta a um banco de dados PostgreSQL hospedado na nuvem para consultar os dados em tempo real.</p>
+
+       <div class="social-icons">
+                <a href="https://www.linkedin.com/in/marialuizaoliveiracampos" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='image/in.png') }}" alt="LinkedIn" class="icon" />
+                </a>
+                <a href="https://www.instagram.com/malucmpos/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='image/insta.png') }}" alt="Instagram" class="icon" />
+                </a>
+                <a href="mailto:marialzacampoos@gmail.com">
+                    <img src="{{ url_for('static', filename='image/email.webp') }}" alt="Email" class="icon" />
+                </a>
+        </div>
+        <a href="{{ url_for('index') }}">← Voltar</a>
+    </div>
+</body>
+</html>

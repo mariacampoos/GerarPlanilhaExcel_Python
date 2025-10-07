@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Exportar Relatório</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+    <!-- Menu de navegação simples -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo-text">Relatórios</span>
+            <a href="{{ url_for('sobre') }}" class="nav-link">Sobre o Projeto</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='image/excel.png') }}" alt="Logo excel" class="logo" />
+
+        <h1>Exportar Relatório de Pedidos</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flash-messages">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('exportar') }}" method="post">
+            <label for="data_inicio">Data início:</label>
+            <input type="date" id="data_inicio" name="data_inicio" required />
+
+            <label for="data_fim">Data fim:</label>
+            <input type="date" id="data_fim" name="data_fim" required />
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="" disabled selected>Selecione o status</option>
+                <option value="Cancelado">Cancelado</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Em Processamento">Em Processamento</option>
+            </select>
+
+            <button type="submit">Gerar relatório</button>
+        </form>
+    </div>
+</body>
+</html>

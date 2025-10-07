@@ -1,0 +1,33 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+.eggs/
+
+# === Virtualenv / Poetry / Pipenv ===
+.env
+.venv/
+venv/
+env/
+*.env
+
+# === IDEs ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Sistema operacional ===
+.DS_Store
+Thumbs.db
+
+# === Logs e caches ===
+*.log
+*.sqlite3
+.cache/
+.pytest_cache/
+.mypy_cache/
